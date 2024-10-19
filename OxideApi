@@ -140,7 +140,7 @@ UIGradient.Parent = Frame
 UIAspectRatioConstraint_2.Parent = Frame
 UIAspectRatioConstraint_2.AspectRatio = 8.410
 
-Frame:TweenPosition(UDim2.new(0.316, 0,0.1, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,1.5)
+Frame:TweenPosition(UDim2.new(0.316, 0,0.05, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,1.5)
 task.spawn(function()
 	task.wait(time+1)
 	Frame:Destroy()

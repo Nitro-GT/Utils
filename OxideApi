@@ -17,7 +17,7 @@ end
  elseif string.find(a.Name,"Right") then
   if string.find(a.Name,"Shoulder") then
   w.Part1 = char["Right Arm"]
-  w.C1 =  char["Right Arm"].RightShoulderAttachment.CFrame
+  w.C1 =  char["Right Arm"].RightShoulderAttachment.CFrame;
 end
  elseif string.find(a.Name,"Left") then
   if string.find(a.Name,"Foot") then
@@ -61,3 +61,5 @@ end
 z.Handle.Anchored = false
 char.Humanoid:AddAccessory(z)
 end
+
+return OxideApi

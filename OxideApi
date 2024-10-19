@@ -63,4 +63,10 @@ z.Handle.Anchored = false
 char.Humanoid:AddAccessory(z)
 end
 
+oa.Fling = function(p)
+pcall(function()
+attackuno(p)
+end)
+end
+
 return oa;

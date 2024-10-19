@@ -70,9 +70,10 @@ end)
 end
 local vim = game:GetService('VirtualInputManager')
  oa.Input = {
-    Hold = function(key, time)
+    Hold = function(key)
         vim:SendKeyEvent(true, key, false, workspace)
-        task.wait(time)
+    end,
+    Unhold = function(key)
         vim:SendKeyEvent(false, key, false, workspace)
     end,
     Press = function(key)

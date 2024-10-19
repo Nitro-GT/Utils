@@ -1,0 +1,85 @@
+local oa = {}
+
+oa.AddHat = function(id)
+local char = game.Players.LocalPlayer.Character
+z = game:GetService("InsertService"):LoadLocalAsset("rbxassetid://"..id)
+z.Handle.CanCollide = false
+z.Handle.CFrame = CFrame.new(0,0,0)
+w = Instance.new("Weld",z.Handle)
+w.C0 = w.Parent:FindFirstChildOfClass("Attachment").CFrame
+w.Name = "AccessoryWeld"
+w.Part0 = z.Handle
+a  = w.Parent:FindFirstChildOfClass("Attachment")
+ if string.find(a.Name,"Left") then
+  if string.find(a.Name,"Shoulder") then
+w.Part1 = char["Left Arm"]
+w.C1 =  char["Left Arm"].LeftShoulderAttachment.CFrame
+end
+ elseif string.find(a.Name,"Right") then
+  if string.find(a.Name,"Shoulder") then
+  w.Part1 = char["Right Arm"]
+  w.C1 =  char["Right Arm"].RightShoulderAttachment.CFrame;
+end
+ elseif string.find(a.Name,"Left") then
+  if string.find(a.Name,"Foot") then
+  w.Part1 = char["Left Leg"]
+  w.C1 =  char["Left Leg"].LeftFootAttachment.CFrame
+end
+ elseif string.find(a.Name,"Right") then
+  if string.find(a.Name,"Foot") then
+  w.Part1 = char["Right Leg"]
+  w.C1 =  char["Right Leg"].RightFootAttachment.CFrame
+end
+ elseif string.find(a.Name,"Waist") then
+  if string.find(a.Name,"Back") then
+     w.Part1 = char["Torso"]
+       w.C1 =  char["Torso"].WaistBackAttachment.CFrame
+       end    
+        elseif string.find(a.Name,"Body") then
+  if string.find(a.Name,"Back") then
+     w.Part1 = char["Torso"]
+       w.C1 =  char["Torso"].BodyBackAttachment.CFrame
+       elseif  string.find(a.Name,"Front") then
+          w.Part1 = char["Torso"]
+       w.C1 =  char["Torso"].BodyFrontAttachment.CFrame
+       end    
+            elseif string.find(a.Name,"Hat") then
+                w.Part1 = char["Head"]
+       w.C1 =  char["Head"].HatAttachment.CFrame 
+                elseif string.find(a.Name,"FaceFront") then
+                       w.Part1 = char["Head"]
+       w.C1 =  char["Head"].FaceFrontAttachment.CFrame 
+                       elseif string.find(a.Name,"FaceCenter") then
+                       w.Part1 = char["Head"]
+       w.C1 =  char["Head"].FaceCenterAttachment.CFrame 
+                                  elseif string.find(a.Name,"Neck") then
+                       w.Part1 = char["Torso"]
+       w.C1 =  char["Torso"].NeckAttachment.CFrame 
+                           elseif string.find(a.Name,"Hair") then
+                       w.Part1 = char["Head"]
+       w.C1 =  char["Head"].HairAttachment.CFrame 
+end
+z.Handle.Anchored = false
+char.Humanoid:AddAccessory(z)
+end
+
+oa.Fling = function(p)
+pcall(function()
+attackuno(p)
+end)
+end
+local vim = game:GetService('VirtualInputManager')
+ oa.Input = {
+    Hold = function(key, time)
+        vim:SendKeyEvent(true, key, false, workspace)
+        task.wait(time)
+        vim:SendKeyEvent(false, key, false, workspace)
+    end,
+    Press = function(key)
+        vim:SendKeyEvent(true, key, false, workspace)
+	task.wait(0.005)
+        vim:SendKeyEvent(false, key, false, nil)
+    end
+}
+
+return oa;

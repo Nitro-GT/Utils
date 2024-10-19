@@ -78,7 +78,7 @@ local vim = game:GetService('VirtualInputManager')
     Press = function(key)
         vim:SendKeyEvent(true, key, false, workspace)
 	task.wait(0.005)
-        vim:SendKeyEvent(false, key, false, nil)
+        vim:SendKeyEvent(false, key, false, workspace)
     end
 }
 

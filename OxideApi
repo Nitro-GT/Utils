@@ -102,7 +102,7 @@ Frame.Parent = OxideNotificationGui
 Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.316000015, 0, -5, 0)
+Frame.Position = UDim2.new(0.316000015, 0, -2, 0)
 Frame.Size = UDim2.new(0.363541663, 0, 0.0769230798, 0)
 
 UICorner.Parent = Frame
@@ -140,7 +140,7 @@ UIGradient.Parent = Frame
 UIAspectRatioConstraint_2.Parent = Frame
 UIAspectRatioConstraint_2.AspectRatio = 8.410
 
-Frame:TweenPosition(UDim2.new(0.316, 0,0.1, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,1)
+Frame:TweenPosition(UDim2.new(0.316, 0,0.1, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,1.5)
 task.spawn(function()
 	task.wait(time+1)
 	Frame:Destroy()

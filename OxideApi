@@ -1,5 +1,6 @@
-local OxideApi = {}
-OxideApi.AddHat = function(id)
+local oa = {}
+
+oa.AddHat = function(id)
 local char = game.Players.LocalPlayer.Character
 z = game:GetService("InsertService"):LoadLocalAsset("rbxassetid://"..id)
 z.Handle.CanCollide = false
@@ -62,4 +63,4 @@ z.Handle.Anchored = false
 char.Humanoid:AddAccessory(z)
 end
 
-return OxideApi
+return oa;

@@ -98,7 +98,7 @@ local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 OxideNotificationGui.Name = "OxideNotificationGui"
 OxideNotificationGui.Parent = game:GetService("CoreGui")
 OxideNotificationGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
+OxideNotificationGui.ResetOnSpawn = false
 Frame.Parent = OxideNotificationGui
 Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)

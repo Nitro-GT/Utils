@@ -157,6 +157,12 @@ UIAspectRatioConstraint_3.AspectRatio = 1.005
 UIAspectRatioConstraint_4.Parent = Frame
 UIAspectRatioConstraint_4.AspectRatio = 10.490
 
+local uistr = Instance.new("UIStroke",Frame)
+uistr.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistr.Color = Color3.fromRGB(49, 203, 233)
+uistr.LineJoinMode = Enum.LineJoinMode.Round
+
+
 Frame:TweenPosition(UDim2.new(0.245, 0,0.05, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,2)
 task.spawn(function()
 	task.wait(time)

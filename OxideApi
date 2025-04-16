@@ -84,67 +84,89 @@ local vim = game:GetService('VirtualInputManager')
     end
 }
 oa.Notification = function(text,time)
+
+
 local OxideNotificationGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local Frame_2 = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 local Notification = Instance.new("TextLabel")
-local UIGradient = Instance.new("UIGradient")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+local ImageLabel = Instance.new("ImageLabel")
+local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
 
+--Properties:
 
 OxideNotificationGui.Name = "OxideNotificationGui"
 OxideNotificationGui.Parent = game:GetService("CoreGui")
 OxideNotificationGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-OxideNotificationGui.ResetOnSpawn = false
+
 Frame.Parent = OxideNotificationGui
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.316000015, 0, -2, 0)
-Frame.Size = UDim2.new(0.363541663, 0, 0.0769230798, 0)
+Frame.Position = UDim2.new(0.245, 0,-2, 0)
+Frame.Size = UDim2.new(0.579237998, 0, 0.0865051895, 0)
 
 UICorner.Parent = Frame
 
 Frame_2.Parent = Frame
-Frame_2.BackgroundColor3 = Color3.fromRGB(39, 39, 39)
+Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_2.BackgroundTransparency = 1.000
 Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame_2.BorderSizePixel = 0
-Frame_2.Position = UDim2.new(0.0138253374, 0, 0.110133804, 0)
-Frame_2.Size = UDim2.new(0.972779393, 0, 0.771084309, 0)
+Frame_2.Position = UDim2.new(0.0967496261, 0, 0, 0)
+Frame_2.Size = UDim2.new(0.902764559, 0, 1, 0)
 
-UICorner_2.Parent = Frame_2
-
-UIAspectRatioConstraint.Parent = Frame_2
-UIAspectRatioConstraint.AspectRatio = 10.609
-
-Notification.Name = text
+Notification.Name = "Notification"
 Notification.Parent = Frame_2
 Notification.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Notification.BackgroundTransparency = 1.000
 Notification.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Notification.BorderSizePixel = 0
-Notification.Position = UDim2.new(0, 0, 0.109374978, 0)
-Notification.Size = UDim2.new(1.00000024, 0, 0.75208348, 0)
-Notification.Font = Enum.Font.Ubuntu
+Notification.Position = UDim2.new(-0.00105599838, 0, 0, 0)
+Notification.Size = UDim2.new(1.00105596, 0, 1, 0)
+Notification.Font = Enum.Font.Gotham
 Notification.Text = text
-Notification.TextColor3 = Color3.fromRGB(255, 255, 255)
+Notification.TextColor3 = Color3.fromRGB(49, 203, 233)
 Notification.TextScaled = true
 Notification.TextSize = 14.000
 Notification.TextWrapped = true
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(49, 203, 233)), ColorSequenceKeypoint.new(0.59, Color3.fromRGB(120, 203, 244)), ColorSequenceKeypoint.new(0.86, Color3.fromRGB(170, 225, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(155, 222, 255))}
-UIGradient.Parent = Frame
+UIAspectRatioConstraint.Parent = Notification
+UIAspectRatioConstraint.AspectRatio = 9.480
 
-UIAspectRatioConstraint_2.Parent = Frame
-UIAspectRatioConstraint_2.AspectRatio = 8.410
+UIAspectRatioConstraint_2.Parent = Frame_2
+UIAspectRatioConstraint_2.AspectRatio = 9.470
 
-Frame:TweenPosition(UDim2.new(0.316, 0,0.05, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,2)
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0, 0, -0.00999999978, 0)
+ImageLabel.Size = UDim2.new(0.0967495963, 0, 1.00999999, 0)
+ImageLabel.ZIndex = 900
+ImageLabel.Image = "rbxassetid://96495217215688"
+
+UIAspectRatioConstraint_3.Parent = ImageLabel
+UIAspectRatioConstraint_3.AspectRatio = 1.005
+
+UIAspectRatioConstraint_4.Parent = Frame
+UIAspectRatioConstraint_4.AspectRatio = 10.490
+
+local uistr = Instance.new("UIStroke",Frame)
+uistr.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+uistr.Color = Color3.fromRGB(49, 203, 233)
+uistr.LineJoinMode = Enum.LineJoinMode.Round
+
+
+Frame:TweenPosition(UDim2.new(0.245, 0,0.05, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,2)
 task.spawn(function()
 	task.wait(time)
-Frame:TweenPosition(UDim2.new(0.316, 0,-2, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,1)
+Frame:TweenPosition(UDim2.new(0.245, 0,-2, 0),Enum.EasingDirection.In,Enum.EasingStyle.Sine,1)
 task.wait(1)
 	Frame:Destroy()
 end)

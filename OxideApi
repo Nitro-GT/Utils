@@ -1,4 +1,4 @@
-
+if real == true then
 local oa = {}
 
 oa.AddHat = function(id)
@@ -352,3 +352,6 @@ oa.convertanim = function(sequence: KeyframeSequence)
 end
 
 return oa;
+else 
+error("KYS!!")
+end
